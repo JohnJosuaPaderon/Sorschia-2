@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorschia", "_assembly\Sorschia\Sorschia.csproj", "{AA81EC60-064D-4AD2-9491-50B7D26DD676}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorschia.Json", "_assembly\Sorschia.Json\Sorschia.Json.csproj", "{B37C2CA5-E967-4283-800D-B32230DBA3D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_assembly", "_assembly", "{02DF6653-1ADA-45D7-B3D9-126ED1795341}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ioc", "ioc", "{E522F32D-D896-45A1-8F7D-D76C2B87CB2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorschia.Json.Ioc", "ioc\Sorschia.Json.Ioc\Sorschia.Json.Ioc.csproj", "{4C35951C-F06E-49C5-B23A-F796142B13CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA81EC60-064D-4AD2-9491-50B7D26DD676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA81EC60-064D-4AD2-9491-50B7D26DD676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA81EC60-064D-4AD2-9491-50B7D26DD676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA81EC60-064D-4AD2-9491-50B7D26DD676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B37C2CA5-E967-4283-800D-B32230DBA3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B37C2CA5-E967-4283-800D-B32230DBA3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B37C2CA5-E967-4283-800D-B32230DBA3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B37C2CA5-E967-4283-800D-B32230DBA3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C35951C-F06E-49C5-B23A-F796142B13CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C35951C-F06E-49C5-B23A-F796142B13CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C35951C-F06E-49C5-B23A-F796142B13CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C35951C-F06E-49C5-B23A-F796142B13CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA81EC60-064D-4AD2-9491-50B7D26DD676} = {02DF6653-1ADA-45D7-B3D9-126ED1795341}
+		{B37C2CA5-E967-4283-800D-B32230DBA3D4} = {02DF6653-1ADA-45D7-B3D9-126ED1795341}
+		{4C35951C-F06E-49C5-B23A-F796142B13CA} = {E522F32D-D896-45A1-8F7D-D76C2B87CB2D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41F1539C-9832-4762-A3B3-5ABC0EDE80A4}
+	EndGlobalSection
+EndGlobal

@@ -9,6 +9,7 @@
     <Authors>John Josua R. Paderon</Authors>
     <Company>Sorschia</Company>
     <Copyright>Copyright 2019 (c) John Josua R. Paderon</Copyright>
+    <PackageLicenseUrl>https://github.com/JohnJosuaPaderon/Sorschia-2/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>

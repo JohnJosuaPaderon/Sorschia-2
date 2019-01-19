@@ -793,6 +793,18 @@ namespace Sorschia.Utility
             return ConvertNullableBase(value, formatProvider, Convert.ToDouble);
         }
 
+        public static Guid? ToNullableGuid(object value)
+        {
+            if (Guid.TryParse(ToString(value), out Guid result))
+            {
+                return result;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static short? ToNullableInt16(object value)
         {
             return ConvertNullableBase(value, Convert.ToInt16);

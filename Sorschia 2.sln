@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ioc", "ioc", "{E522F32D-D89
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorschia.Json.Ioc", "ioc\Sorschia.Json.Ioc\Sorschia.Json.Ioc.csproj", "{4C35951C-F06E-49C5-B23A-F796142B13CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorschia.EntityFrameworkCore.Relational", "_assembly\Sorschia.EntityFrameworkCore.Relational\Sorschia.EntityFrameworkCore.Relational.csproj", "{BA1EAC31-6064-4CC0-AFBC-570ADB0CB556}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorschia.EntityFrameworkCore.Relational", "_assembly\Sorschia.EntityFrameworkCore.Relational\Sorschia.EntityFrameworkCore.Relational.csproj", "{BA1EAC31-6064-4CC0-AFBC-570ADB0CB556}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorschia.EntityFrameworkCore.SqlServer", "_assembly\Sorschia.EntityFrameworkCore.SqlServer\Sorschia.EntityFrameworkCore.SqlServer.csproj", "{7E8DC483-BD3C-4A34-8C9A-B26F694F71D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorschia.SqlServer", "_assembly\Sorschia.SqlServer\Sorschia.SqlServer.csproj", "{EF557AF8-C79D-49F8-AFDF-CDFB5CBE5398}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,10 +39,10 @@ Global
 		{BA1EAC31-6064-4CC0-AFBC-570ADB0CB556}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA1EAC31-6064-4CC0-AFBC-570ADB0CB556}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA1EAC31-6064-4CC0-AFBC-570ADB0CB556}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7E8DC483-BD3C-4A34-8C9A-B26F694F71D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E8DC483-BD3C-4A34-8C9A-B26F694F71D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7E8DC483-BD3C-4A34-8C9A-B26F694F71D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7E8DC483-BD3C-4A34-8C9A-B26F694F71D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF557AF8-C79D-49F8-AFDF-CDFB5CBE5398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF557AF8-C79D-49F8-AFDF-CDFB5CBE5398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF557AF8-C79D-49F8-AFDF-CDFB5CBE5398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF557AF8-C79D-49F8-AFDF-CDFB5CBE5398}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,7 +52,7 @@ Global
 		{B37C2CA5-E967-4283-800D-B32230DBA3D4} = {02DF6653-1ADA-45D7-B3D9-126ED1795341}
 		{4C35951C-F06E-49C5-B23A-F796142B13CA} = {E522F32D-D896-45A1-8F7D-D76C2B87CB2D}
 		{BA1EAC31-6064-4CC0-AFBC-570ADB0CB556} = {02DF6653-1ADA-45D7-B3D9-126ED1795341}
-		{7E8DC483-BD3C-4A34-8C9A-B26F694F71D3} = {02DF6653-1ADA-45D7-B3D9-126ED1795341}
+		{EF557AF8-C79D-49F8-AFDF-CDFB5CBE5398} = {02DF6653-1ADA-45D7-B3D9-126ED1795341}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41F1539C-9832-4762-A3B3-5ABC0EDE80A4}

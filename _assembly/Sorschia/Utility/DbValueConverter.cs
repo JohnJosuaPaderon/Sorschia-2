@@ -175,6 +175,11 @@ namespace Sorschia.Utility
             return Convert(value, ValueConverter.ToNullableDouble, formatProvider);
         }
 
+        public static Guid? ToNullableGuid(object value)
+        {
+            return Convert(value, ValueConverter.ToNullableGuid);
+        }
+
         public static short? ToNullableInt16(object value)
         {
             return Convert(value, ValueConverter.ToNullableInt16);

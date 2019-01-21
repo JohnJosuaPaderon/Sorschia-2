@@ -5,7 +5,7 @@
     <AssemblyName>Sorschia2</AssemblyName>
     <PackageId>Sorschia2</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.0-beta2</Version>
+    <Version>0.1.0-beta3</Version>
     <Authors>John Josua R. Paderon</Authors>
     <Copyright>Copyright 2019 (c) John Josua R. Paderon</Copyright>
     <Company>Sorschia</Company>
@@ -20,5 +20,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Repository\" />
+  </ItemGroup>
 
 </Project>

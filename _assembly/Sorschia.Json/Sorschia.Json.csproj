@@ -5,12 +5,13 @@
     <AssemblyName>Sorschia2.Json</AssemblyName>
     <RootNamespace>Sorschia</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.0-beta3</Version>
+    <Version>0.1.0-beta4</Version>
     <Authors>John Josua R. Paderon</Authors>
     <Copyright>Copyright 2019 (c) John Josua R. Paderon</Copyright>
     <Company>Sorschia</Company>
     <PackageLicenseUrl>https://github.com/JohnJosuaPaderon/Sorschia-2/blob/master/LICENSE</PackageLicenseUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/JohnJosuaPaderon/Sorschia-2/master/resources/images/logo.png</PackageIconUrl>
+    <PackageTags>Sorschia Sorschia2</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

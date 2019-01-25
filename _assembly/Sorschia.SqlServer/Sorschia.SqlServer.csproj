@@ -5,12 +5,13 @@
     <AssemblyName>Sorschia2.SqlServer</AssemblyName>
     <RootNamespace>Sorschia</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.0-beta3</Version>
+    <Version>0.1.0-beta4</Version>
     <Authors>John Josua R. Paderon</Authors>
     <Company>Sorschia</Company>
     <Copyright>Copyright 2019 (c) John Josua R. Paderon</Copyright>
     <PackageIconUrl>https://raw.githubusercontent.com/JohnJosuaPaderon/Sorschia-2/master/resources/images/logo.png</PackageIconUrl>
     <PackageLicenseUrl>https://github.com/JohnJosuaPaderon/Sorschia-2/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageTags>Sorschia Sorschia2</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

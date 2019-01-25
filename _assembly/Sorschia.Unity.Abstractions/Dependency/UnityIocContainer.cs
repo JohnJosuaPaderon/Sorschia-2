@@ -3,9 +3,9 @@ using Unity.Resolution;
 
 namespace Sorschia.Dependency
 {
-    internal sealed class IocContainer : IIocContainer
+    public sealed class UnityIocContainer : IIocContainer
     {
-        public IocContainer(IUnityContainer unityContainer)
+        public UnityIocContainer(IUnityContainer unityContainer)
         {
             _unityContainer = unityContainer;
         }

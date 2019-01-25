@@ -6,9 +6,9 @@ namespace Sorschia.Extension
 {
     public static class IIocContainerExtensions
     {
-        private static IocContainer GetConcrete(this IIocContainer instance)
+        private static UnityIocContainer GetConcrete(this IIocContainer instance)
         {
-            if (instance is IocContainer concrete)
+            if (instance is UnityIocContainer concrete)
             {
                 return concrete;
             }

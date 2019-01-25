@@ -2,7 +2,7 @@
 
 namespace Sorschia.Dependency
 {
-    internal sealed class IocContainer : IIocContainer
+    public sealed class IocContainer : IIocContainer
     {
         public IocContainer(IServiceProvider serviceProvider)
         {

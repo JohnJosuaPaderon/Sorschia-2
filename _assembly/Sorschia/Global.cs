@@ -8,24 +8,24 @@ namespace Sorschia
         private static IIocContainer _iocContainer;
         public static IIocContainer IocContainer
         {
-            get => TryGet(_iocContainer, nameof(IocContainer));
+            get => TryGet(_iocContainer, _iocContainerInitializer, nameof(IocContainer));
         }
 
-        private static T TryGet<T>(T backingField, string propertyName)
+        private static Func<IIocContainer> _iocContainerInitializer;
+
+        private static T TryGet<T>(T backingField, Func<T> initializer, string propertyName)
         {
-            if (Equals(backingField, default(T)))
+            if (Equals(backingField, default(T)) && initializer != null)
             {
-                throw new InvalidOperationException($"Sorschia.Global.{propertyName} was not initialized.");
+                backingField = initializer();
             }
-            else
-            {
-                return backingField;
-            }
+
+            return backingField;
         }
 
-        public static void Initialize(IIocContainer iocContainer = null)
+        public static void Initialize(Func<IIocContainer> iocContainerInitializer = null)
         {
-            _iocContainer = iocContainer;
+            _iocContainerInitializer = iocContainerInitializer;
         }
     }
 }

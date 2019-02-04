@@ -57,5 +57,55 @@ namespace Sorschia.Extension
             });
             return instance;
         }
+
+        public static DbParameterCollection AddInOut(this DbParameterCollection instance, string name, object value, DbType dbType)
+        {
+            instance.Add(new SqlParameter
+            {
+                ParameterName = name,
+                DbType = dbType,
+                Value = value,
+                Direction = ParameterDirection.InputOutput
+            });
+            return instance;
+        }
+
+        public static DbParameterCollection AddInOut(this DbParameterCollection instance, string name, object value, DbType dbType, int size)
+        {
+            instance.Add(new SqlParameter
+            {
+                ParameterName = name,
+                DbType = dbType,
+                Value = value,
+                Direction = ParameterDirection.InputOutput,
+                Size = size
+            });
+            return instance;
+        }
+
+        public static DbParameterCollection AddInOut(this DbParameterCollection instance, string name, object value, SqlDbType sqlDbType)
+        {
+            instance.Add(new SqlParameter
+            {
+                ParameterName = name,
+                SqlDbType = sqlDbType,
+                Value = value,
+                Direction = ParameterDirection.InputOutput
+            });
+            return instance;
+        }
+
+        public static DbParameterCollection AddInOut(this DbParameterCollection instance, string name, object value, SqlDbType sqlDbType, int size)
+        {
+            instance.Add(new SqlParameter
+            {
+                ParameterName = name,
+                SqlDbType = sqlDbType,
+                Value = value,
+                Direction = ParameterDirection.InputOutput,
+                Size = size
+            });
+            return instance;
+        }
     }
 }

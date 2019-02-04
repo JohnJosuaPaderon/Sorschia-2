@@ -8,12 +8,12 @@ namespace Sorschia
         private static IIocContainer _iocContainer;
         public static IIocContainer IocContainer
         {
-            get => TryGet(_iocContainer, _iocContainerInitializer, nameof(IocContainer));
+            get => TryGet(ref _iocContainer, _iocContainerInitializer, nameof(IocContainer));
         }
 
         private static Func<IIocContainer> _iocContainerInitializer;
 
-        private static T TryGet<T>(T backingField, Func<T> initializer, string propertyName)
+        private static T TryGet<T>(ref T backingField, Func<T> initializer, string propertyName)
         {
             if (Equals(backingField, default(T)) && initializer != null)
             {

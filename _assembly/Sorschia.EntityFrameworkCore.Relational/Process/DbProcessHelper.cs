@@ -30,6 +30,30 @@ namespace Sorschia.Process
             }
         }
 
+        public static T HandleExecute<T>(DbContext context, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbTransaction, T> callback)
+        {
+            var connection = context.Database.GetOpenDbConnection();
+
+            using (var transaction = connection.BeginTransaction())
+            {
+                try
+                {
+                    using (var command = createCommand(connection, transaction))
+                    {
+                        return callback(command.ExecuteNonQuery(), transaction);
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
         public static T HandleExecute<T>(DbContext context, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbCommand, DbTransaction, T> callback)
         {
             var connection = context.Database.GetOpenDbConnection();
@@ -72,6 +96,30 @@ namespace Sorschia.Process
             finally
             {
                 connection.Close();
+            }
+        }
+
+        public static async Task<T> HandleExecuteAsync<T>(DbContext context, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbTransaction, T> callback, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var connection = await context.Database.GetOpenDbConnectionAsync();
+
+            using (var transaction = connection.BeginTransaction())
+            {
+                try
+                {
+                    using (var command = createCommand(connection, transaction))
+                    {
+                        return callback(await command.ExecuteNonQueryAsync(cancellationToken), transaction);
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 

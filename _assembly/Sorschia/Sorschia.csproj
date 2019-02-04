@@ -5,7 +5,7 @@
     <AssemblyName>Sorschia2</AssemblyName>
     <PackageId>Sorschia2</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.0-beta5</Version>
+    <Version>1.0.0-pre</Version>
     <Authors>John Josua R. Paderon</Authors>
     <Copyright>Copyright 2019 (c) John Josua R. Paderon</Copyright>
     <Company>Sorschia</Company>

@@ -1,18 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Sorschia.Extension;
 using System;
 using System.Data.Common;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Sorschia.Process
+namespace Sorschia.Extension
 {
-    [Obsolete("This will be removed in next release, please use extension methods of DbContext instead.")]
-    public static class DbProcessHelper
+    public static class DbContextExtensions
     {
-        public static T HandleExecute<T>(DbContext context, Func<DbConnection, DbCommand> createCommand, Func<int, DbCommand, T> callback)
+        public static T Execute<T>(this DbContext instance, Func<DbConnection, DbCommand> createCommand, Func<int, DbCommand, T> callback)
         {
-            var connection = context.Database.GetOpenDbConnection();
+            var connection = instance.Database.GetOpenDbConnection();
 
             try
             {
@@ -31,9 +29,9 @@ namespace Sorschia.Process
             }
         }
 
-        public static T HandleExecute<T>(DbContext context, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbTransaction, T> callback)
+        public static T Execute<T>(this DbContext instance, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbTransaction, T> callback)
         {
-            var connection = context.Database.GetOpenDbConnection();
+            var connection = instance.Database.GetOpenDbConnection();
 
             using (var transaction = connection.BeginTransaction())
             {
@@ -55,9 +53,9 @@ namespace Sorschia.Process
             }
         }
 
-        public static T HandleExecute<T>(DbContext context, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbCommand, DbTransaction, T> callback)
+        public static T Execute<T>(this DbContext instance, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbCommand, DbTransaction, T> callback)
         {
-            var connection = context.Database.GetOpenDbConnection();
+            var connection = instance.Database.GetOpenDbConnection();
 
             using (var transaction = connection.BeginTransaction())
             {
@@ -79,9 +77,9 @@ namespace Sorschia.Process
             }
         }
 
-        public static async Task<T> HandleExecuteAsync<T>(DbContext context, Func<DbConnection, DbCommand> createCommand, Func<int, DbCommand, T> callback, CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task<T> ExecuteAsync<T>(this DbContext instance, Func<DbConnection, DbCommand> createCommand, Func<int, DbCommand, T> callback, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var connection = await context.Database.GetOpenDbConnectionAsync(cancellationToken);
+            var connection = await instance.Database.GetOpenDbConnectionAsync(cancellationToken);
 
             try
             {
@@ -100,9 +98,9 @@ namespace Sorschia.Process
             }
         }
 
-        public static async Task<T> HandleExecuteAsync<T>(DbContext context, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbTransaction, T> callback, CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task<T> ExecuteAsync<T>(this DbContext instance, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbTransaction, T> callback, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var connection = await context.Database.GetOpenDbConnectionAsync();
+            var connection = await instance.Database.GetOpenDbConnectionAsync();
 
             using (var transaction = connection.BeginTransaction())
             {
@@ -124,9 +122,9 @@ namespace Sorschia.Process
             }
         }
 
-        public static async Task<T> HandleExecuteAsync<T>(DbContext context, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbCommand, DbTransaction, T> callback, CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task<T> ExecuteAsync<T>(this DbContext instance, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbCommand, DbTransaction, T> callback, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var connection = await context.Database.GetOpenDbConnectionAsync(cancellationToken);
+            var connection = await instance.Database.GetOpenDbConnectionAsync(cancellationToken);
 
             using (var transaction = connection.BeginTransaction())
             {

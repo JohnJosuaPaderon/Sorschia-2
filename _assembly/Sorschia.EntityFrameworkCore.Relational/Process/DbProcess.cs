@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
 
 namespace Sorschia.Process
 {
@@ -16,6 +17,19 @@ namespace Sorschia.Process
         protected string GetProcedureName()
         {
             return $"{Schema ?? "dbo"}.{GetType().Name}";
+        }
+
+        protected virtual bool Callback(int affectedRows, DbTransaction transaction)
+        {
+            if (affectedRows > 0)
+            {
+                transaction.Commit();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

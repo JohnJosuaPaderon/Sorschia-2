@@ -19,7 +19,7 @@ namespace Sorschia.Process
             return $"{Schema ?? "dbo"}.{GetType().Name}";
         }
 
-        protected virtual bool Callback(int affectedRows, DbTransaction transaction)
+        protected virtual bool BooleanCallback(int affectedRows, DbTransaction transaction)
         {
             if (affectedRows > 0)
             {

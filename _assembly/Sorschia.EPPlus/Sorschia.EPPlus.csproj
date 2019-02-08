@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Sorschia2.EPPlus</AssemblyName>
+    <RootNamespace>Sorschia</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0-pre</Version>
+    <Authors>John Josua R. Paderon</Authors>
+    <Company>Sorschia</Company>
+    <Copyright>Copyright 2019 (c) John Josua R. Paderon</Copyright>
+    <PackageLicenseUrl>https://github.com/JohnJosuaPaderon/Sorschia-2/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/JohnJosuaPaderon/Sorschia-2/master/resources/images/logo.png</PackageIconUrl>
+    <PackageTags>Sorschia Sorschia2</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="4.5.3.1" />
+  </ItemGroup>
+
+</Project>

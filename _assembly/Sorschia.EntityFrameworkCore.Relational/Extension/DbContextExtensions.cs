@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Data.Common;
 using System.Threading;
@@ -29,27 +30,11 @@ namespace Sorschia.Extension
             }
         }
 
-        public static T Execute<T>(this DbContext instance, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbTransaction, T> callback)
+        public static T LinkExecute<T>(this DbContext instance, Func<DbConnection, DbCommand> createCommand, Func<int, DbCommand, T> callback)
         {
-            var connection = instance.Database.GetOpenDbConnection();
-
-            using (var transaction = connection.BeginTransaction())
+            using (var command = createCommand(instance.Database.GetOpenDbConnection()))
             {
-                try
-                {
-                    using (var command = createCommand(connection, transaction))
-                    {
-                        return callback(command.ExecuteNonQuery(), transaction);
-                    }
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    connection.Close();
-                }
+                return callback(command.ExecuteNonQuery(), command);
             }
         }
 
@@ -77,6 +62,14 @@ namespace Sorschia.Extension
             }
         }
 
+        public static T LinkExecute<T>(this DbContext instance, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbCommand, T> callback)
+        {
+            using (var command = createCommand(instance.Database.GetOpenDbConnection(), instance.Database.CurrentTransaction.GetDbTransaction()))
+            {
+                return callback(command.ExecuteNonQuery(), command);
+            }
+        }
+
         public static async Task<T> ExecuteAsync<T>(this DbContext instance, Func<DbConnection, DbCommand> createCommand, Func<int, DbCommand, T> callback, CancellationToken cancellationToken = default(CancellationToken))
         {
             var connection = await instance.Database.GetOpenDbConnectionAsync(cancellationToken);
@@ -98,27 +91,11 @@ namespace Sorschia.Extension
             }
         }
 
-        public static async Task<T> ExecuteAsync<T>(this DbContext instance, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbTransaction, T> callback, CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task<T> LinkExecuteAsync<T>(this DbContext instance, Func<DbConnection, DbCommand> createCommand, Func<int, DbCommand, T> callback, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var connection = await instance.Database.GetOpenDbConnectionAsync();
-
-            using (var transaction = connection.BeginTransaction())
+            using (var command = createCommand(await instance.Database.GetOpenDbConnectionAsync(cancellationToken)))
             {
-                try
-                {
-                    using (var command = createCommand(connection, transaction))
-                    {
-                        return callback(await command.ExecuteNonQueryAsync(cancellationToken), transaction);
-                    }
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    connection.Close();
-                }
+                return callback(await command.ExecuteNonQueryAsync(cancellationToken), command);
             }
         }
 
@@ -143,6 +120,14 @@ namespace Sorschia.Extension
                 {
                     connection.Close();
                 }
+            }
+        }
+
+        public static async Task<T> LinkExecuteAsync<T>(this DbContext instance, Func<DbConnection, DbTransaction, DbCommand> createCommand, Func<int, DbCommand, T> callback, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            using (var command = createCommand(await instance.Database.GetOpenDbConnectionAsync(cancellationToken), instance.Database.CurrentTransaction.GetDbTransaction()))
+            {
+                return callback(await command.ExecuteNonQueryAsync(cancellationToken), command);
             }
         }
     }

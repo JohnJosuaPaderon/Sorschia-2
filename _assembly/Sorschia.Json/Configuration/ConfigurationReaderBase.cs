@@ -41,7 +41,15 @@ namespace Sorschia.Configuration
             }
             else
             {
-                return null;
+                using (var stream = File.Create(FilePath))
+                {
+                    using (var writer = new StreamWriter(stream))
+                    {
+                        writer.WriteLine("{");
+                        writer.WriteLine("}");
+                    }
+                    return null;
+                }
             }
         }
     }

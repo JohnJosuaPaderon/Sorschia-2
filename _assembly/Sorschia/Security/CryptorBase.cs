@@ -101,7 +101,8 @@ namespace Sorschia.Security
         {
             return new RijndaelManaged
             {
-                BlockSize = 256,
+                BlockSize = 128,
+                //BlockSize = 256,
                 Mode = CipherMode.CBC,
                 Padding = PaddingMode.PKCS7
             };

@@ -12,6 +12,24 @@ namespace Sorschia.Extension
             return instance;
         }
 
+        public static DbParameterCollection AddIn(this DbParameterCollection instance, string name, object value, DbType dbType)
+        {
+            instance.Add(new SqlParameter(name, value)
+            {
+                DbType = dbType
+            });
+            return instance;
+        }
+
+        public static DbParameterCollection AddIn(this DbParameterCollection instance, string name, object value, SqlDbType sqlDbType)
+        {
+            instance.Add(new SqlParameter(name, value)
+            {
+                SqlDbType = sqlDbType
+            });
+            return instance;
+        }
+
         public static DbParameterCollection AddOut(this DbParameterCollection instance, string name, DbType dbType)
         {
             instance.Add(new SqlParameter

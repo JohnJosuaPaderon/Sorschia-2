@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.Common;
 
 namespace Sorschia.Extension
@@ -7,7 +8,19 @@ namespace Sorschia.Extension
     {
         public static DbCommand AddInParameter(this DbCommand instance, string name, object value)
         {
-            instance.Parameters.AddIn(name, value);
+            instance.Parameters.AddIn(name, value ?? DBNull.Value);
+            return instance;
+        }
+
+        public static DbCommand AddInParameter(this DbCommand instance, string name, object value, DbType dbType)
+        {
+            instance.Parameters.AddIn(name, value ?? DBNull.Value, dbType);
+            return instance;
+        }
+
+        public static DbCommand AddInParameter(this DbCommand instance, string name, object value, SqlDbType sqlDbType)
+        {
+            instance.Parameters.AddIn(name, value ?? DBNull.Value, sqlDbType);
             return instance;
         }
 
@@ -37,25 +50,25 @@ namespace Sorschia.Extension
 
         public static DbCommand AddInOutParameter(this DbCommand instance, string name, object value, DbType dbType)
         {
-            instance.Parameters.AddInOut(name, value, dbType);
+            instance.Parameters.AddInOut(name, value ?? DBNull.Value, dbType);
             return instance;
         }
 
         public static DbCommand AddInOutParameter(this DbCommand instance, string name, object value, DbType dbType, int size)
         {
-            instance.Parameters.AddInOut(name, value, dbType, size);
+            instance.Parameters.AddInOut(name, value ?? DBNull.Value, dbType, size);
             return instance;
         }
 
         public static DbCommand AddInOutParameter(this DbCommand instance, string name, object value, SqlDbType sqlDbType)
         {
-            instance.Parameters.AddInOut(name, value, sqlDbType);
+            instance.Parameters.AddInOut(name, value ?? DBNull.Value, sqlDbType);
             return instance;
         }
 
         public static DbCommand AddInOutParameter(this DbCommand instance, string name, object value, SqlDbType sqlDbType, int size)
         {
-            instance.Parameters.AddInOut(name, value, sqlDbType, size);
+            instance.Parameters.AddInOut(name, value ?? DBNull.Value, sqlDbType, size);
             return instance;
         }
     }

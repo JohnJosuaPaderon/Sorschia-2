@@ -23,6 +23,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sorschia.EPPlus", "_assembl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sorschia.Wpf.MaterialDesign", "_assembly\Sorschia.Wpf.MaterialDesign\Sorschia.Wpf.MaterialDesign.csproj", "{D5AB10A0-A208-4AC9-B803-EEDBD1C00576}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CB8A4055-52F4-4ECE-928C-59F21560F4E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoTestApp", "test\CryptoTestApp\CryptoTestApp.csproj", "{CEE7C743-21FE-4DEA-BD49-CDA53451DE38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,10 @@ Global
 		{D5AB10A0-A208-4AC9-B803-EEDBD1C00576}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5AB10A0-A208-4AC9-B803-EEDBD1C00576}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5AB10A0-A208-4AC9-B803-EEDBD1C00576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE7C743-21FE-4DEA-BD49-CDA53451DE38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE7C743-21FE-4DEA-BD49-CDA53451DE38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE7C743-21FE-4DEA-BD49-CDA53451DE38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE7C743-21FE-4DEA-BD49-CDA53451DE38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +82,7 @@ Global
 		{954ACC05-28F4-46CB-919E-890B39E9FB3E} = {02DF6653-1ADA-45D7-B3D9-126ED1795341}
 		{A33120AA-31A7-4D07-8A8E-EDE64A211E6D} = {02DF6653-1ADA-45D7-B3D9-126ED1795341}
 		{D5AB10A0-A208-4AC9-B803-EEDBD1C00576} = {02DF6653-1ADA-45D7-B3D9-126ED1795341}
+		{CEE7C743-21FE-4DEA-BD49-CDA53451DE38} = {CB8A4055-52F4-4ECE-928C-59F21560F4E7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41F1539C-9832-4762-A3B3-5ABC0EDE80A4}

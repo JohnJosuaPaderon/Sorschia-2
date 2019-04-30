@@ -5,7 +5,7 @@
     <RootNamespace>Sorschia</RootNamespace>
     <AssemblyName>Sorschia2.Json.Ioc</AssemblyName>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.0-pre</Version>
+    <Version>1.1.0-pre3</Version>
     <Authors>John Josua R. Paderon</Authors>
     <Product>Sorschia2.Json.Ioc</Product>
     <Company>Sorschia</Company>
@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>

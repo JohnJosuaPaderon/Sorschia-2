@@ -32,4 +32,11 @@ namespace Sorschia.Process
             }
         }
     }
+
+    public sealed class LinkedProcesses
+    {
+        private bool IsFaulted { get; set; }
+
+
+    }
 }

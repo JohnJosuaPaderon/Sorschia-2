@@ -9,6 +9,7 @@ namespace Sorschia.Configuration
         public CryptoKeyWriter(CryptoKeyFileProvider fileProvider, ICryptor cryptor, IPlatformKeyProvider platformKeyProvider) : base(fileProvider.FilePath)
         {
             Cryptor = cryptor;
+            PlatformKeyProvider = platformKeyProvider;
         }
 
         private ICryptor Cryptor { get; }
